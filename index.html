@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src data:; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="dark">
+  <title>Rygiel</title>
+  <link rel="icon" href="ikona.png" type="image/png">
+  <link rel="stylesheet" href="kroje.css">
+  <link rel="stylesheet" href="strona.css">
+  <script type="module" src="strona.js"></script>
+</head>
+<body>
+  <main class="kolumna">
+    <header class="naglowek">
+      <img src="logo.svg" alt="" width="40" height="40">
+      <img src="nazwa.svg" alt="Rygiel" width="119" height="40" class="nazwa">
+    </header>
+
+    <section id="zamknieta" class="zamknieta" aria-labelledby="tytul-kod">
+      <h1 id="tytul-kod">Strona prywatna</h1>
+      <p class="slaby">Wpisz kod od osoby, która podała Ci ten adres.</p>
+      <form id="formularz" class="formularz" novalidate>
+        <label for="kod" class="etykieta">Kod dostępu</label>
+        <div class="rzad">
+          <input id="kod" name="kod" class="pole" autocomplete="off" autocapitalize="characters" spellcheck="false"
+                 inputmode="text" maxlength="24" placeholder="XXXX-XXXX-XXXX-XXXX" aria-describedby="blad-kodu" required>
+          <button id="otworz" class="przycisk glowny" type="submit">Otwórz</button>
+        </div>
+        <p id="blad-kodu" class="blad" role="alert" hidden></p>
+      </form>
+      <noscript><p class="blad">Strona potrzebuje włączonego JavaScriptu.</p></noscript>
+    </section>
+
+    <section id="otwarta" class="otwarta" aria-labelledby="tytul-wydanie" hidden>
+      <div class="glowa">
+        <p id="platforma" class="etykieta"></p>
+        <h1 id="tytul-wydanie" tabindex="-1">Rygiel <span id="wersja"></span></h1>
+        <p id="opis-pliku" class="slaby"></p>
+      </div>
+
+      <div class="pobieranie">
+        <button id="pobierz" class="przycisk glowny duzy" type="button">Pobierz</button>
+        <div id="postep" class="postep" hidden>
+          <progress id="pasek" max="1" value="0"></progress>
+        </div>
+        <p id="stan" class="slaby stan" aria-live="polite"></p>
+        <p id="blad-pobierania" class="blad" role="alert" hidden></p>
+        <a id="zapisz" class="przycisk" hidden>Zapisz plik jeszcze raz</a>
+      </div>
+
+      <div class="blok">
+        <h2 class="etykieta">Kroki</h2>
+        <ol id="kroki" class="kroki"></ol>
+        <p id="uwaga" class="slaby maly"></p>
+      </div>
+
+      <div class="blok">
+        <h2 class="etykieta">Zmiany</h2>
+        <ul id="zmiany" class="zmiany"></ul>
+      </div>
+
+      <div class="blok">
+        <h2 class="etykieta">Suma SHA-256</h2>
+        <p id="suma" class="mono suma"></p>
+        <p class="slaby maly">Podpisana kluczem wydawcy, sprawdzona w tej przeglądarce.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
